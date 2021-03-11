@@ -1,6 +1,6 @@
 {
   "name": "react-3d-square",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "module": "dist/Square.js",
   "main": "dist/Square.js",
   "author": "Yunseo Hwang  <yunseo.dev@gmail.com>",
