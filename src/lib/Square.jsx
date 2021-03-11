@@ -71,8 +71,8 @@ Square.defaultProps = {
   index: 'front',
   size: 500,
   transition: 1,
-  emptyBgColor: '',
-  emptyBdColor: '',
+  emptyBgColor: '#fff',
+  emptyBdColor: '#000',
 };
 
 export default Square;
