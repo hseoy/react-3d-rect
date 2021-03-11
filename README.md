@@ -2,6 +2,16 @@
 
 > 3D Square with transition
 
+- [Demo](https://hseoy.github.io/react-3d-square/)
+
+## Table of Content
+
+1. [Install](#install)
+2. [Usage](#usage)
+3. [Main Props](#main-props)
+4. [To run an example](#to-run-an-example)
+5. [License](#license)
+
 ## Install
 
 ```
@@ -10,56 +20,32 @@ $ npm install --save react-3d-square
 
 ## Usage
 
-```tsx
-import React, { useState } from 'react';
-import Square from 'lib/Square';
-import S from './App.css';
+The library consists of a single component. Square components can have four children and can ignore more than four children. You can control the index, transition-duration, etc. of Square using props.
 
-const SquareDemo = () => {
-  const [currentFace, setCurrentFace] = useState(0);
-  const faces = ['face', 'right', 'back', 'left'];
+```jsx
+import Square from 'react-3d-square';
 
-  const nextSlide = () => {
-    setCurrentFace((currentFace + 1) % 4);
-  };
+// ...
 
-  const prevSlide = () => {
-    setCurrentFace(currentFace - 1 >= 0 ? currentFace - 1 : 3);
-  };
+<Square index={'front'} transition={0.5}>
+  <div>FRONT</div>
+  <div>RIGHT</div>
+  <div>BACK</div>
+  <div>LEFT</div>
+</Square>;
 
-  const setSlideIndex = num => () => {
-    setCurrentFace(num % 4);
-  };
-
-  return (
-    <S.Wrap>
-      <S.TitleWrap>
-        <S.Title>Square Demo</S.Title>
-      </S.TitleWrap>
-
-      <S.SquareWrap>
-        <Square index={faces[currentFace]} transition={0.5}>
-          <S.SquareContent>FRONT</S.SquareContent>
-          <S.SquareContent>RIGHT</S.SquareContent>
-          <S.SquareContent>BACK</S.SquareContent>
-          <S.SquareContent>LEFT</S.SquareContent>
-        </Square>
-        <S.PrevButton onClick={prevSlide}>&#10094;</S.PrevButton>
-        <S.NextButton onClick={nextSlide}>&#10095;</S.NextButton>
-      </S.SquareWrap>
-
-      <S.DotsWrap>
-        <S.Dot active={currentFace === 0} onClick={setSlideIndex(0)} />
-        <S.Dot active={currentFace === 1} onClick={setSlideIndex(1)} />
-        <S.Dot active={currentFace === 2} onClick={setSlideIndex(2)} />
-        <S.Dot active={currentFace === 3} onClick={setSlideIndex(3)} />
-      </S.DotsWrap>
-    </S.Wrap>
-  );
-};
-
-export default SquareDemo;
+// ...
 ```
+
+### Main Props
+
+| Attributes   |   Type   | Default | Description                                                               |
+| :----------- | :------: | :-----: | :------------------------------------------------------------------------ |
+| index        | `string` | `front` | Sets the current square side. Possible values: `front, right, back, left` |
+| size         | `number` |  `500`  | Width(px) of Square. Height of Square is `100%`                           |
+| transition   | `number` |   `1`   | Duration of transition                                                    |
+| emptyBgColor | `string` | `#fff`  | Background color of empty face of Square                                  |
+| emptyBdColor | `string` | `#000`  | Border color of empty face of Square                                      |
 
 ### To run an example:
 
