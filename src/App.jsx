@@ -41,6 +41,17 @@ const SquareDemo = () => {
         <S.Dot active={currentFace === 2} onClick={setSlideIndex(2)} />
         <S.Dot active={currentFace === 3} onClick={setSlideIndex(3)} />
       </S.DotsWrap>
+
+      <S.AuthorMarkWrap>
+        <S.AuthorMark
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/hseoy/react-3d-square"
+        >
+          <S.AuthorMarkLeftArrow />
+          <S.AuthorMarkName>Yunseo Hwang</S.AuthorMarkName>
+        </S.AuthorMark>
+      </S.AuthorMarkWrap>
     </S.Wrap>
   );
 };

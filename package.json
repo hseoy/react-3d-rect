@@ -5,8 +5,7 @@
   "main": "dist/Square.js",
   "author": "Yunseo Hwang  <yunseo.dev@gmail.com>",
   "license": "MIT",
-  "repository": "hseoy/react-3d-square",
-  "homepage": "https://github.com/hseoy/react-3d-square",
+  "repository": "https://github.com/hseoy/react-3d-square.git",
   "keywords": [
     "react",
     "3d",
