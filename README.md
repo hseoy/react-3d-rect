@@ -4,6 +4,8 @@
 
 - [Demo](https://hseoy.github.io/react-3d-rect/)
 
+![Demo](./img/demo.gif)
+
 ## Table of Content
 
 1. [Install](#install)
