@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Square from 'lib/Square';
+import Rect from 'lib/Rect';
 import S from './App.css';
 
 const SquareDemo = () => {
@@ -21,19 +21,19 @@ const SquareDemo = () => {
   return (
     <S.Wrap>
       <S.TitleWrap>
-        <S.Title>Square Demo</S.Title>
+        <S.Title>React 3D Rect Demo</S.Title>
       </S.TitleWrap>
 
-      <S.SquareWrap>
-        <Square index={faces[currentFace]} transition={0.5}>
-          <S.SquareContent>FRONT</S.SquareContent>
+      <S.RectWrap>
+        <Rect index={faces[currentFace]} transition={0.5}>
+          <S.RectContent>FRONT</S.RectContent>
           <S.SquareContent>RIGHT</S.SquareContent>
           <S.SquareContent>BACK</S.SquareContent>
           <S.SquareContent>LEFT</S.SquareContent>
-        </Square>
+        </Rect>
         <S.PrevButton onClick={prevSlide}>&#10094;</S.PrevButton>
         <S.NextButton onClick={nextSlide}>&#10095;</S.NextButton>
-      </S.SquareWrap>
+      </S.RectWrap>
 
       <S.DotsWrap>
         <S.Dot active={currentFace === 0} onClick={setSlideIndex(0)} />

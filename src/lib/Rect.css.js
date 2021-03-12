@@ -9,7 +9,7 @@ const Scene = styled.div`
   overflow: hidden;
 `;
 
-const Square = styled.div`
+const Rect = styled.div`
   transform-style: preserve-3d;
   transition: transform ${props => props.transition || '0'}s;
   width: 100%;
@@ -35,7 +35,7 @@ const Square = styled.div`
     );
 `;
 
-const SquareFace = styled.div`
+const RectFace = styled.div`
   position: absolute;
   text-align: center;
   overflow: hidden;
@@ -63,7 +63,7 @@ const SquareFace = styled.div`
     translateZ(${props => props.size / 2 || '0'}px);
 `;
 
-const SquareFaceEmpty = styled.div`
+const RectFaceEmpty = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,4 +74,4 @@ const SquareFaceEmpty = styled.div`
   border: 3px solid ${props => props.bdColor || '#000'};
 `;
 
-export default { Scene, Square, SquareFace, SquareFaceEmpty };
+export default { Scene, Rect, RectFace, RectFaceEmpty };

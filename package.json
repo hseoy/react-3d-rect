@@ -1,16 +1,16 @@
 {
-  "name": "react-3d-square",
-  "version": "1.0.4",
-  "module": "dist/Square.js",
-  "main": "dist/Square.js",
+  "name": "react-3d-rect",
+  "version": "1.0.5",
+  "module": "dist/Rect.js",
+  "main": "dist/Rect.js",
   "author": "Yunseo Hwang  <yunseo.dev@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/hseoy/react-3d-square.git",
-  "homepage": "https://hseoy.github.io/react-3d-square/",
+  "repository": "https://github.com/hseoy/react-3d-rect.git",
+  "homepage": "https://hseoy.github.io/react-3d-rect/",
   "keywords": [
     "react",
     "3d",
-    "square",
+    "rect",
     "transition",
     "animation",
     "cube"

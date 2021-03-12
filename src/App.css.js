@@ -24,7 +24,7 @@ const Title = styled.span`
   padding-bottom: 10px;
 `;
 
-const SquareWrap = styled.div`
+const RectWrap = styled.div`
   width: 100%;
   height: 350px;
   overflow: hidden;
@@ -34,7 +34,7 @@ const SquareWrap = styled.div`
   position: relative;
 `;
 
-const SquareContent = styled.div`
+const RectContent = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -132,8 +132,8 @@ export default {
   Wrap,
   TitleWrap,
   Title,
-  SquareWrap,
-  SquareContent,
+  RectWrap,
+  RectContent,
   PrevButton,
   NextButton,
   DotsWrap,

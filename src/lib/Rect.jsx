@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import S from './Square.css';
+import S from './Rect.css';
 
-const Square = ({
+const Rect = ({
   children,
   index,
   size,
@@ -10,26 +10,26 @@ const Square = ({
   emptyBgColor,
   emptyBdColor,
 }) => {
-  let squareFaces = [];
+  let rectFaces = [];
   const emptyFace = id => (
-    <S.SquareFaceEmpty key={id} bgColor={emptyBgColor} bdColor={emptyBdColor}>
+    <S.RectFaceEmpty key={id} bgColor={emptyBgColor} bdColor={emptyBdColor}>
       Empty
-    </S.SquareFaceEmpty>
+    </S.RectFaceEmpty>
   );
 
   if (children) {
-    squareFaces = Array.isArray(children)
+    rectFaces = Array.isArray(children)
       ? [...children].slice(0, 4)
       : [children];
   }
 
-  for (let i = 0; squareFaces.length < 4; i += 1) {
-    squareFaces.push(emptyFace(i));
+  for (let i = 0; rectFaces.length < 4; i += 1) {
+    rectFaces.push(emptyFace(i));
   }
 
   return (
     <S.Scene size={size}>
-      <S.Square
+      <S.Rect
         front={index === 'front'}
         right={index === 'right'}
         back={index === 'back'}
@@ -37,24 +37,24 @@ const Square = ({
         size={size}
         transition={transition}
       >
-        <S.SquareFace front size={size}>
-          {squareFaces[0]}
-        </S.SquareFace>
-        <S.SquareFace right size={size}>
-          {squareFaces[1]}
-        </S.SquareFace>
-        <S.SquareFace back size={size}>
-          {squareFaces[2]}
-        </S.SquareFace>
-        <S.SquareFace left size={size}>
-          {squareFaces[3]}
-        </S.SquareFace>
-      </S.Square>
+        <S.RectFace front size={size}>
+          {rectFaces[0]}
+        </S.RectFace>
+        <S.RectFace right size={size}>
+          {rectFaces[1]}
+        </S.RectFace>
+        <S.RectFace back size={size}>
+          {rectFaces[2]}
+        </S.RectFace>
+        <S.RectFace left size={size}>
+          {rectFaces[3]}
+        </S.RectFace>
+      </S.Rect>
     </S.Scene>
   );
 };
 
-Square.propTypes = {
+Rect.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -66,7 +66,7 @@ Square.propTypes = {
   emptyBdColor: PropTypes.string,
 };
 
-Square.defaultProps = {
+Rect.defaultProps = {
   children: undefined,
   index: 'front',
   size: 500,
@@ -75,4 +75,4 @@ Square.defaultProps = {
   emptyBdColor: '#000',
 };
 
-export default Square;
+export default Rect;
