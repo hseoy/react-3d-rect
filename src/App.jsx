@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Rect from 'lib/Rect';
 import S from './App.css';
 
-const SquareDemo = () => {
+const RectDemo = () => {
   const [currentFace, setCurrentFace] = useState(0);
   const faces = ['face', 'right', 'back', 'left'];
 
@@ -27,9 +27,9 @@ const SquareDemo = () => {
       <S.RectWrap>
         <Rect index={faces[currentFace]} transition={0.5}>
           <S.RectContent>FRONT</S.RectContent>
-          <S.SquareContent>RIGHT</S.SquareContent>
-          <S.SquareContent>BACK</S.SquareContent>
-          <S.SquareContent>LEFT</S.SquareContent>
+          <S.RectContent>RIGHT</S.RectContent>
+          <S.RectContent>BACK</S.RectContent>
+          <S.RectContent>LEFT</S.RectContent>
         </Rect>
         <S.PrevButton onClick={prevSlide}>&#10094;</S.PrevButton>
         <S.NextButton onClick={nextSlide}>&#10095;</S.NextButton>
@@ -56,4 +56,4 @@ const SquareDemo = () => {
   );
 };
 
-export default SquareDemo;
+export default RectDemo;
