@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import S from './Rect.css';
 
@@ -10,22 +10,25 @@ const Rect = ({
   emptyBgColor,
   emptyBdColor,
 }) => {
-  let rectFaces = [];
-  const emptyFace = id => (
-    <S.RectFaceEmpty key={id} bgColor={emptyBgColor} bdColor={emptyBdColor}>
-      Empty
-    </S.RectFaceEmpty>
+  const emptyFace = useCallback(
+    id => (
+      <S.RectFaceEmpty key={id} bgColor={emptyBgColor} bdColor={emptyBdColor}>
+        Empty
+      </S.RectFaceEmpty>
+    ),
+    [emptyBgColor, emptyBdColor],
   );
 
-  if (children) {
-    rectFaces = Array.isArray(children)
-      ? [...children].slice(0, 4)
-      : [children];
-  }
-
-  for (let i = 0; rectFaces.length < 4; i += 1) {
-    rectFaces.push(emptyFace(i));
-  }
+  const rectFaces = useMemo(() => {
+    let faces = [];
+    if (children) {
+      faces = Array.isArray(children) ? [...children].slice(0, 4) : [children];
+    }
+    for (let i = 0; faces.length < 4; i += 1) {
+      faces.push(emptyFace(i));
+    }
+    return faces;
+  }, [children]);
 
   return (
     <S.Scene size={size}>
@@ -67,7 +70,7 @@ Rect.propTypes = {
 };
 
 Rect.defaultProps = {
-  children: undefined,
+  children: null,
   index: 'front',
   size: 500,
   transition: 1,
