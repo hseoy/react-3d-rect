@@ -1,5 +1,8 @@
 # react-3d-rect
 
+[![Weekly Downloads](https://img.shields.io/npm/dw/react-3d-rect)](https://www.npmjs.com/package/react-3d-rect)
+[![Total Downloads](https://img.shields.io/npm/dt/react-3d-rect)](https://www.npmjs.com/package/react-3d-rect)
+
 > 3D Rectangle with transition
 
 - [Demo](https://hseoy.github.io/react-3d-rect/)
